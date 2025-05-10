@@ -2,23 +2,23 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useState } from 'react'
-import { useCart } from '@/contexts/CartContext'
+import { useState } from "react"
+import { useCart } from "@/contexts/CartContext"
 import { products } from "../../data/products"
 import SimpleNavbar from "@/components/SimpleNavbar"
 import SimpleFooter from "@/components/SimpleFooter"
 
 export default function Boutique() {
   const { addToCart } = useCart()
-  const [category, setCategory] = useState('all')
+  const [category, setCategory] = useState("all")
   
   // Filtrer les produits par catégorie
-  const filteredProducts = category === 'all' 
+  const filteredProducts = category === "all" 
     ? products 
     : products.filter(product => product.category === category)
   
   // Extraire les catégories uniques
-  const categories = ['all', ...new Set(products.map(product => product.category))]
+  const categories = ["all", ...new Set(products.map(product => product.category))]
   
   return (
     <main className="min-h-screen flex flex-col bg-background">
@@ -41,11 +41,11 @@ export default function Boutique() {
               onClick={() => setCategory(cat)}
               className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
                 category === cat 
-                  ? 'bg-green-primary text-white shadow-md' 
-                  : 'bg-cream hover:bg-green-pale/30 text-text-medium'
+                  ? "bg-green-primary text-white shadow-md" 
+                  : "bg-cream hover:bg-green-pale/30 text-text-medium"
               }`}
             >
-              {cat === 'all' ? 'Tous les produits' : cat}
+              {cat === "all" ? "Tous les produits" : cat}
             </button>
           ))}
         </div>
@@ -59,7 +59,7 @@ export default function Boutique() {
                   src={product.image}
                   alt={product.name}
                   fill
-                  style={{ objectFit: 'contain' }}
+                  style={{ objectFit: "contain" }}
                   className="group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute top-2 right-2 bg-green-pale/80 text-green-dark text-xs px-2 py-1 rounded-full">
@@ -87,7 +87,7 @@ export default function Boutique() {
           <div className="text-center py-12 bg-cream rounded-lg">
             <p className="text-text-medium text-lg">Aucun produit trouvé dans cette catégorie.</p>
             <button 
-              onClick={() => setCategory('all')}
+              onClick={() => setCategory("all")}
               className="mt-4 text-green-primary hover:text-green-accent"
             >
               Voir tous les produits
