@@ -2,8 +2,11 @@
 
 import Image from "next/image"
 import Link from "next/link"
+import { useState } from 'react'
 import { useCart } from '@/contexts/CartContext'
 import { products } from "../../data/products"
+import SimpleNavbar from "@/components/SimpleNavbar"
+import SimpleFooter from "@/components/SimpleFooter"
 
 export default function Boutique() {
   const { addToCart } = useCart()
