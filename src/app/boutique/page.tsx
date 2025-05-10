@@ -2,14 +2,11 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useContext, useState } from 'react'
-import SimpleNavbar from "@/components/SimpleNavbar"
-import SimpleFooter from "@/components/SimpleFooter"
-import { CartContext } from '@/contexts/CartContext'
+import { useCart } from '@/contexts/CartContext'
 import { products } from "../../data/products"
 
 export default function Boutique() {
-  const { addToCart } = useContext(CartContext)
+  const { addToCart } = useCart()
   const [category, setCategory] = useState('all')
   
   // Filtrer les produits par catégorie
