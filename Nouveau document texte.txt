@@ -1,0 +1,33 @@
+@echo off
+set "root=green-commerce"
+
+:: Créer les dossiers
+mkdir %root%\public\images\products
+mkdir %root%\src\components\Layout
+mkdir %root%\src\contexts
+mkdir %root%\src\data
+mkdir %root%\src\pages
+mkdir %root%\src\styles
+
+:: Créer les fichiers
+type nul > %root%\public\images\logo.png
+type nul > %root%\src\components\Layout\Header.js
+type nul > %root%\src\components\Layout\Footer.js
+type nul > %root%\src\components\Layout\Layout.js
+type nul > %root%\src\components\ProductCard.js
+type nul > %root%\src\components\ProductList.js
+type nul > %root%\src\components\CartItem.js
+type nul > %root%\src\components\ContactForm.js
+type nul > %root%\src\contexts\CartContext.js
+type nul > %root%\src\data\products.js
+type nul > %root%\src\pages\index.js
+type nul > %root%\src\pages\boutique.js
+type nul > %root%\src\pages\panier.js
+type nul > %root%\src\pages\contact.js
+type nul > %root%\src\pages\_app.js
+type nul > %root%\src\pages\_document.js
+type nul > %root%\src\styles\globals.css
+type nul > %root%\src\styles\Home.module.css
+
+echo Dossier green-commerce créé avec succès.
+pause
