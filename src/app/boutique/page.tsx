@@ -38,7 +38,7 @@ export default function Boutique() {
           {categories.map(cat => (
             <button
               key={cat}
-              onClick={() => setCategory(cat)}
+              onClick={() => setCategory(cat || 'all')}
               className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
                 category === cat 
                   ? "bg-green-primary text-white shadow-md" 
